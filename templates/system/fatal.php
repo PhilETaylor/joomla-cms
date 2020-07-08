@@ -34,11 +34,11 @@ if (file_exists(__DIR__ . '/fatal.custom.php'))
 ?>
 <html>
 <head>
-	<meta charset="<?= $this->charset; ?>"/>
+	<meta charset="<?php echo $this->charset; ?>"/>
 	<meta http-equiv="Content-Language" content="en-GB">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>An Error Occurred: <?= $statusText; ?></title>
+	<title>An Error Occurred: <?php echo $statusText; ?></title>
 	<style>body {
 			margin: 0;
 			padding: 0;
@@ -139,7 +139,7 @@ if (file_exists(__DIR__ . '/fatal.custom.php'))
 		<div class="alert-main">
 
 			<h1 id="headerText">Sorry, there was a problem we could not recover from.</h1>
-			<h2>The server returned a "<?= $statusCode; ?> <?= $statusText; ?>".</h2>
+			<h2>The server returned a "<?php echo $statusCode . ' ' . $statusText; ?>".</h2>
 
 			<p id="descText1">
 				Sorry for any inconvenience caused.
