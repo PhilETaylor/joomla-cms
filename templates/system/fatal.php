@@ -127,10 +127,6 @@ if (file_exists(__DIR__ . '/fatal.custom.php'))
 			h1 {
 				font-size: 30px
 			}
-
-			h2 {
-
-			}
 		}</style>
 </head>
 <body>
