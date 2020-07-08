@@ -1,3 +1,37 @@
+<?php
+/**
+ * @package     Joomla.Site
+ * @subpackage  Template.system
+ *
+ * @copyright   Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+defined('_JEXEC') or die;
+
+use Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer;
+
+/**
+ * Note: This file is only used when unrecoverable errors happen,
+ * normally at boot up stages, and therefore it cannot be assumed
+ * that any part of Joomla is available (Eg: a Factory or application)
+ *
+ * For "normal" error handling, use error.php not this file.
+ *
+ * @var  HtmlErrorRenderer  $this       object containing charset
+ * @var  string             $statusText exception error message
+ * @var  string             $statusCode exception error code
+ */
+
+// allow override to prevent changes being wiped on Joomla upgrade.
+if (file_exists(__DIR__ . '/fatal.custom.php'))
+{
+	include __DIR__ . '/fatal.custom.php';
+
+	return;
+}
+
+?>
 <html>
 <head>
 	<meta charset="<?= $this->charset; ?>"/>
