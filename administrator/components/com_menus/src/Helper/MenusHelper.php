@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_menus
  *
- * @copyright   Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
+ * @copyright   (C) 2017 Open Source Matters, Inc. <https://www.joomla.org>
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -498,9 +498,9 @@ class MenusHelper extends ContentHelper
 			$item->alias = $menutype . '-' . $item->title;
 
 			// Temporarily set unicodeslugs if a menu item has an unicode alias
-			$unicode     = Factory::getConfig()->set('unicodeslugs', 1);
+			$unicode     = Factory::getApplication()->set('unicodeslugs', 1);
 			$item->alias = ApplicationHelper::stringURLSafe($item->alias);
-			Factory::getConfig()->set('unicodeslugs', $unicode);
+			Factory::getApplication()->set('unicodeslugs', $unicode);
 
 			if ($item->type == 'separator')
 			{

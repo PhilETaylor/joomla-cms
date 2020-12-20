@@ -2,13 +2,13 @@
 /**
  * Joomla! Content Management System
  *
- * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
+ * @copyright  (C) 2020 Open Source Matters, Inc. <https://www.joomla.org>
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 namespace Joomla\CMS\Console;
 
-defined('JPATH_PLATFORM') or die;
+\defined('JPATH_PLATFORM') or die;
 
 use Joomla\CMS\Installer\Installer;
 use Joomla\CMS\Installer\InstallerHelper;
@@ -88,21 +88,15 @@ class ExtensionInstallCommand extends AbstractCommand
 		$this->addOption('path', null, InputOption::VALUE_REQUIRED, 'The path to the extension');
 		$this->addOption('url', null, InputOption::VALUE_REQUIRED, 'The url to the extension');
 
+		$help = "<info>%command.name%</info> is used to install extensions
+		\nYou must provide one of the following options to the command:
+		\n  --path: The path on your local filesystem to the install package
+		\n  --url: The URL from where the install package should be downloaded
+		\nUsage:
+		\n  <info>php %command.full_name% --path=<path_to_file></info>
+		\n  <info>php %command.full_name% --url=<url_to_file></info>";
+
 		$this->setDescription('Install an extension from a URL or from a path');
-
-		$help = <<<'EOF'
-The <info>%command.name%</info> is used to install extensions
-
-  <info>php %command.full_name%</info>
-
-You must provide one of the following options to the command:
-
-  --path: The path on your local filesystem to the install package
-  --url: The URL from where the install package should be downloaded
-
-  <info>php %command.full_name% --path=<path_to_file></info>
-  <info>php %command.full_name% --url=<url_to_file></info>
-EOF;
 		$this->setHelp($help);
 	}
 

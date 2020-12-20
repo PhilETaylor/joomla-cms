@@ -2,13 +2,13 @@
 /**
  * Joomla! Content Management System
  *
- * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
+ * @copyright  (C) 2020 Open Source Matters, Inc. <https://www.joomla.org>
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 namespace Joomla\CMS\Console;
 
-defined('JPATH_PLATFORM') or die;
+\defined('JPATH_PLATFORM') or die;
 
 use Joomla\Console\Command\AbstractCommand;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -75,13 +75,10 @@ class SiteDownCommand extends AbstractCommand
 	 */
 	protected function configure(): void
 	{
+		$help = "<info>%command.name%</info> puts the site into offline mode
+		\nUsage: <info>php %command.full_name%</info>";
+
 		$this->setDescription('Put the site into offline mode');
-
-		$help = <<<'EOF'
-The <info>%command.name%</info> is used to place the site offline.
-
-  <info>php %command.full_name%</info>
-EOF;
 		$this->setHelp($help);
 	}
 

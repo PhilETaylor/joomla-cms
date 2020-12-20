@@ -3,7 +3,7 @@
  * @package     Joomla.API
  * @subpackage  com_content
  *
- * @copyright   Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
+ * @copyright   (C) 2019 Open Source Matters, Inc. <https://www.joomla.org>
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -46,6 +46,25 @@ class JsonapiView extends BaseApiView
 		'created',
 		'author',
 		'images',
+		'metakey',
+		'metadesc',
+		'metadata',
+		'access',
+		'featured',
+		'alias',
+		'note',
+		'publish_up',
+		'publish_down',
+		'urls',
+		'created',
+		'created_by',
+		'created_by_alias',
+		'modified',
+		'modified_by',
+		'hits',
+		'version',
+		'featured_up',
+		'featured_down',
 	];
 
 	/**
@@ -67,6 +86,25 @@ class JsonapiView extends BaseApiView
 		'created',
 		'author',
 		'images',
+		'metakey',
+		'metadesc',
+		'metadata',
+		'access',
+		'featured',
+		'alias',
+		'note',
+		'publish_up',
+		'publish_down',
+		'urls',
+		'created',
+		'created_by',
+		'created_by_alias',
+		'modified',
+		'modified_by',
+		'hits',
+		'version',
+		'featured_up',
+		'featured_down',
 	];
 
 	/**

@@ -3,7 +3,7 @@
  * @package     Joomla.Plugin
  * @subpackage  User.token
  *
- * @copyright   Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
+ * @copyright   (C) 2020 Open Source Matters, Inc. <https://www.joomla.org>
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -210,11 +210,6 @@ class PlgUserToken extends CMSPlugin
 		if (!PluginHelper::isEnabled('api-authentication', $this->_name))
 		{
 			return true;
-		}
-
-		if (!($form instanceof Form))
-		{
-			throw new Exception('JERROR_NOT_A_FORM');
 		}
 
 		// Check we are manipulating a valid form.

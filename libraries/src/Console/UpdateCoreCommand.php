@@ -2,13 +2,13 @@
 /**
  * Joomla! Content Management System
  *
- * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
+ * @copyright  (C) 2020 Open Source Matters, Inc. <https://www.joomla.org>
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 namespace Joomla\CMS\Console;
 
-defined('JPATH_PLATFORM') or die;
+\defined('JPATH_PLATFORM') or die;
 
 use Joomla\Application\Cli\CliInput;
 use Joomla\CMS\Filesystem\File;
@@ -189,13 +189,10 @@ class UpdateCoreCommand extends AbstractCommand
 	 */
 	protected function configure(): void
 	{
+		$help = "<info>%command.name%</info> is used to update Joomla
+		\nUsage: <info>php %command.full_name%</info>";
+
 		$this->setDescription('Update Joomla');
-
-		$help = <<<'EOF'
-The <info>%command.name%</info> is used to update Joomla.
-
-  <info>php %command.full_name%</info>
-EOF;
 		$this->setHelp($help);
 	}
 

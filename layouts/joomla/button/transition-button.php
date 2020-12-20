@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  Layout
  *
- * @copyright   Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
+ * @copyright   (C) 2018 Open Source Matters, Inc. <https://www.joomla.org>
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -12,14 +12,17 @@ use Joomla\CMS\Language\Text;
 
 HTMLHelper::_('bootstrap.popover');
 
-/**
- * @var $icon    string
- * @var $title   string
- * @var $value   string
- * @var $task    string
- * @var $options array
- */
 extract($displayData, EXTR_OVERWRITE);
+
+/**
+ * Layout variables
+ * -----------------
+ * @var   string  $icon
+ * @var   string  $title
+ * @var   string  $value
+ * @var   string  $task
+ * @var   array   $options
+ */
 
 $only_icon = empty($options['transitions']);
 $disabled = !empty($options['disabled']);
