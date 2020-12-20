@@ -42,4 +42,8 @@ if (file_exists(__DIR__ . '/../../media/system/fatal-error.html'))
 	$template = file_get_contents( __DIR__ . '/../../media/system/fatal-error.html');
 }
 
-echo str_replace('{{statusCode_statusText}}', $statusCode . ' - ' . $statusText, $template);
+echo str_replace(
+	['{{statusCode_statusText}}', '{{statusCode}}', '{{statusText}}'],
+	[$statusCode . ' - ' . $statusText, $statusCode, $statusText],
+	$template
+);
