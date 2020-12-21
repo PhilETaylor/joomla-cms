@@ -39,7 +39,7 @@ if (file_exists(__DIR__ . '/fatal.custom.php'))
 // Joomla supplied fatal error page
 if (file_exists(__DIR__ . '/../../media/system/html/fatal-error.html'))
 {
-	$template = file_get_contents( __DIR__ . '/../../media/system/fatal-error.html');
+	$template = file_get_contents( __DIR__ . '/../../media/system/html/fatal-error.html');
 }
 
 echo str_replace(
