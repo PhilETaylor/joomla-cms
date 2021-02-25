@@ -26,20 +26,21 @@ use Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer;
 // Fallback template
 $template = '{{statusCode_statusText}}';
 
-/**
- * User supplied fatal error page.
- * Allow overriding Joomla supplied page to prevent changes being wiped on Joomla upgrade.
- * Allow it to be a PHP file so that any post-processing, alerting etc can happen.
- */
-if (file_exists(__DIR__ . '/fatal.custom.php'))
+// Joomla supplied fatal error page
+if (file_exists(__DIR__ . '/fatal-error.html'))
 {
-	$template = file_get_contents(__DIR__ . '/fatal.custom.php');
+	$template = file_get_contents( __DIR__ . '/fatal-error.html');
 }
 
-// Joomla supplied fatal error page
-if (file_exists(__DIR__ . '/../../media/system/html/fatal-error.html'))
+/**
+ * User supplied fatal error page.
+ *
+ * Allow overriding Joomla supplied page to prevent changes being wiped on Joomla upgrade.
+ * We allow it to be a PHP file so that any post-processing, alerting etc can happen.
+ */
+if (file_exists(__DIR__ . '/fatal-error.custom.php'))
 {
-	$template = file_get_contents( __DIR__ . '/../../media/system/html/fatal-error.html');
+	$template = file_get_contents(__DIR__ . '/fatal-error.custom.php');
 }
 
 echo str_replace(
